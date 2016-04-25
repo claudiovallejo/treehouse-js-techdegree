@@ -14,7 +14,7 @@ function Quote(author, ids, quote, imagePath, imageSource, imageUrl) {
 var quote1 = new Quote(
   "Friedrich Nietzche",
   "Philosopher, Critic, Poet",
-  "\"And those who were dancing were thought to be insance by those who couldn't hear the music.\"",
+  "\"And those who were dancing were thought to be insane by those who couldn't hear the music.\"",
   "images/friedrich@2x.jpg",
   "Art Creation Forever",
   "http://artcreationforever.com/images/friedrich-nietzsche/friedrich-nietzsche-06.jpg"
@@ -35,7 +35,7 @@ var quote2 = new Quote(
 // Carl Jung
 var quote3 = new Quote(
   "Carl Jung",
-  "Psychiatrist, Psuchotherapist",
+  "Psychiatrist, Psychotherapist",
   "\"Everything that irritates us about others can lead us to an understanding of ourselves.\"",
   "images/carl@2x.jpg",
   "Biography.com",
@@ -46,7 +46,7 @@ var quote3 = new Quote(
 // Fyodor Dostoyevsky
 var quote4 = new Quote(
   "Fyodor Dostoyevsky",
-  "Author, Philospher",
+  "Author, Philosopher",
   "\"The greatest happiness is to know the source of unhappiness.\"",
   "images/fyodor@2x.jpg",
   "Populere Debiyat",
@@ -90,7 +90,7 @@ var quote7 = new Quote(
 var quote8 = new Quote(
   "Martin Luther King Jr.",
   "Minister, Activist, Humanitarian, Leader",
-  "\"The ultimatemeasure of a man is not where he stands in moments of comfort and convenience, but where he stands at times of challenge and controversy.\"",
+  "\"The ultimate measure of a man is not where he stands in moments of comfort and convenience, but where he stands at times of challenge and controversy.\"",
   "images/martin@2x.jpg",
   "National Service",
   "http://www.nationalservice.gov/sites/default/files/upload/mlklarge4.jpg"
@@ -124,19 +124,51 @@ var quote10 = new Quote(
 var quotes = [quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10];
 var quotesClone = [];
 
-/* Color Object Array - - - - - - - - - */
-var colors = ["gray", "turquoise", "blue", "green", "purple", "yellow", "salmon", "lila", "orange", "bubblegum"];
-var colorsClone = [];
+// /* Color Object Array - - - - - - - - - */
+// var colors = ["gray", "turquoise", "blue", "green", "purple", "yellow", "salmon", "lila", "orange", "bubblegum"];
+// var colorsClone = [];
 
 /* Random Index Global Variables */
-var numberOfQuotes = colors.length;
+var numberOfQuotes = quotes.length;
 var randomIndex = (Math.floor(Math.random() * numberOfQuotes));
+var testProfiles = [];
+
+/* Testing Function - - - - - - - - - - */
+function test(profile) {
+  testProfiles.push(profile);
+
+  if (testProfiles.length === 10) {
+    var printList = "You have viewed the following profiles: ";
+    console.log("Test Array has " + testProfiles.length + " profiles.");
+    for (var index = 0; index < testProfiles.length; index++) {
+      printList += (index + 1) + ". " + testProfiles[index].author + "; ";
+
+    }
+
+    console.log(printList);
+    testProfiles = [];
+
+  } else {
+    if (testProfiles.length === 1) {
+      console.log("Test Array has " + testProfiles.length + " profile.");
+
+    } else {
+      console.log("Test Array has " + testProfiles.length + " profiles.");
+
+    }
+
+  }
+
+}
 
 /* Random Quote Function - - - - - - - - - - */
 function getRandomQuote() {
+
   if (numberOfQuotes > 0) {
+    randomIndex = (Math.floor(Math.random() * numberOfQuotes));
     var randomQuote = quotes[randomIndex];
     quotesClone.push(randomQuote);
+    test(quotes[randomIndex]);
     return quotes[randomIndex];
 
   }
@@ -144,29 +176,31 @@ function getRandomQuote() {
   if (numberOfQuotes === 0) {
     quotes = quotesClone;
     quotesClone = [];
+    randomIndex = (Math.floor(Math.random() * numberOfQuotes));
+    test(quotes[randomIndex]);
     return quotes[randomIndex];
 
   }
 
 }
 
-/* Random Color Function - - - - - - - - - */
-function getRandomColor() {
-  if (numberOfQuotes > 0) {
-    var randomColor = colors[randomIndex];
-    colorsClone.push(randomColor);
-    return randomColor;
-
-  }
-
-  if (numberOfQuotes === 0) {
-    colors = colorsClone;
-    colorsClone = [];
-    return colors[randomIndex];
-
-  }
-
-}
+// /* Random Color Function - - - - - - - - - */
+// function getRandomColor() {
+//   if (numberOfQuotes > 0) {
+//     var randomColor = colors[randomIndex];
+//     colorsClone.push(randomColor);
+//     return randomColor;
+//
+//   }
+//
+//   if (numberOfQuotes === 0) {
+//     colors = colorsClone;
+//     colorsClone = [];
+//     return colors[randomIndex];
+//
+//   }
+//
+// }
 
 /* Print Quote Function - - - - - - - - - */
 function printQuote() {
@@ -174,12 +208,12 @@ function printQuote() {
   var profile = getRandomQuote();
 
   // Create a Color for Random Color
-  var color = getRandomColor();
+  // var color = getRandomColor();
 
   // Capture Profile's Portrait and Source Data
   var image = "";
-  // image += "<div class=\"overlay default-gray\"></div>";
-  image += "<div class=\"overlay " + color + "\"></div>";
+  image += "<div class=\"overlay default-gray\"></div>";
+  // image += "<div class=\"overlay " + color + "\"></div>";
   image += "<img id=\"portrait\" class=\"portrait\" src=\"" + profile.imagePath + "\">";
   image += "<p class=\"citation\"> Photo from ";
   image += "<a class=\"source\" target=\"_blank\" href=\"" + profile.imageUrl + "\"> " + profile.imageSource + "</a></p>";
@@ -196,15 +230,12 @@ function printQuote() {
   document.getElementById('copy').innerHTML = copy;
 
   /* Remove Color from Master Array */
-  colors.splice(randomIndex, 1);
+  // colors.splice(randomIndex, 1);
   quotes.splice(randomIndex, 1);
-  numberOfQuotes = colors.length;
-  randomIndex = (Math.floor(Math.random() * numberOfQuotes));
+  numberOfQuotes = quotes.length;
 
 }
 
 /* Next Button - - - - - - - - - */
 var next = document.getElementById('button');
 next.addEventListener('click', printQuote);
-
-/* Delay Entry Animations - - - - - - - - - */
