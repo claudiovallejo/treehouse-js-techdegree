@@ -1,9 +1,8 @@
-# Welcome to the Treehouse Techdegree
+# Full Stack JavaScript Techdegree by Treehouse
 
-## Start Date: _Wednesday, April 20th, 2016_
+## Degree Start Date: _Wednesday, April 20th, 2016_
 
-You'll be able to complete this Techdegree in 12 months by spending about 5 hours a week, studying the courses, and
-building the projects.
+In this repository I'll be sharing my notes and projects for Treehouse's Full Stack JavaScript TechDegree. Below you'll find a short breakdown of the Program. If you're interested in learning more about the Techdegree, head over to their [site] (https://teamtreehouse.com "site").
 
 The Treehouse Techdegree
 1.  Online courses
