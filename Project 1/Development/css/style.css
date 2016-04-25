@@ -1,0 +1,310 @@
+/* Grid System - - - - - - - - - */
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+}
+
+/* Content Wrapper */
+.wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+
+}
+
+/* Container Rules */
+.container {
+	width: 100%;
+	max-width: 960px;
+	box-sizing: border-box;
+
+}
+
+/* Row Rules */
+.row:before, .row:after {
+	content: "";
+	display: table;
+	clear: both;
+
+}
+
+/* Column Rules */
+[class*='col-'] {
+	float: left;
+	padding: 0 10px;
+	min-height: 1px;
+
+}
+
+// [class*='col-']:last-of-type {
+// 	padding: 0;
+// 	min-height: 1px;
+// }
+
+.col-1 {
+	width:  8.33%;
+
+}
+
+.col-2 {
+	width: 16.66%;
+
+}
+
+.col-3 {
+	width: 25%;
+
+}
+
+.col-4 {
+	width: 33.33%;
+
+}
+
+.col-5 {
+	width: 41.66%;
+
+}
+
+.col-6 {
+	width: 50%;
+
+}
+
+.col-7 {
+	width: 58.33%;
+
+}
+
+.col-8 {
+	width: 66.66%;
+
+}
+
+.col-9 {
+	width: 75%;
+
+}
+
+.col-10 {
+	width: 83.33%;
+
+}
+
+.col-11 {
+	width: 91.66%;
+
+}
+
+.col-12 {
+	width: 100%;
+
+}
+
+/* Next Button - - - - - - - - - */
+.button {
+  /* Structure */
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  z-index: 3;
+  /* Type */
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #0080ff;
+
+}
+
+.next {
+  /* Structure */
+  display: inline-block;
+  float: right;
+  padding-right: 15px;
+
+}
+
+.arrow {
+  /* Structure */
+  position: relative;
+  display: inline-block;
+  float: right;
+  top: 7.5px;
+  width: 21px;
+  height: 16px;
+
+}
+
+/* Portrait and Copyright - - - - - - - - - */
+.absolute {
+  /* Structure */
+  position: absolute;
+  z-index: 0;
+
+}
+
+.portrait {
+  /* Structure */
+  width: 380px;
+  height: 500px;
+  margin-bottom: 5px;
+
+}
+
+.citation {
+  /* Type */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  color: #4a4a4a;
+
+}
+
+.source {
+  /* Type */
+  font-weight: 400;
+  color: #4a4a4a;
+
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(215, 215, 215, 0.75);
+  width: 380px;
+  height: 500px;
+
+}
+
+/* Copy - - - - - - - - -  */
+.relative {
+  /* Structure */
+  position: relative;
+  z-index: 2;
+  margin-top: 75px;
+
+}
+
+.author {
+  /* Structure */
+  margin-top: 35px;
+  margin-bottom: 5px;
+  /* Type */
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 52px;
+  color: #000000;
+
+}
+
+.ids {
+  /* Structure */
+  margin-bottom: 50px;
+  /* Type */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 24px;
+  color: #000000;
+
+}
+
+.separator {
+  /* Structure */
+  width: 35px;
+  margin-bottom: 50px;
+  border-bottom: 2px solid #000000;
+
+}
+
+.quote {
+  /* Type */
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 48px;
+  color: #000000;
+
+}
+
+/* Spacer - - - - - - - - - */
+/*.spacer {
+  padding: 50px 0;
+
+}*/
+
+/* Default Copy State */
+.default {
+  /* Structure */
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.45, 0.25, 0.25, 1);
+
+}
+
+.default:hover {
+  opacity: 1;
+}
+
+/* Color Overlays - - - - - - - - - */
+.default-gray {
+  background-color: rgba(195, 195, 195, 0.75);
+}
+
+.gray {
+  background-color: rgba(215, 215, 215, 0.75);
+
+}
+
+.turquoise {
+  background-color: rgba(80, 227, 194, 0.75);
+
+}
+
+.blue {
+  background-color: rgba(0, 128, 250, 0.75);
+
+}
+
+.green {
+  background-color: rgba(37, 211, 33, 0.75);
+
+}
+
+.purple {
+  background-color: rgba(114, 68, 254, 0.75);
+
+}
+
+.yellow {
+  background-color: rgba(248, 231, 38, 0.75);
+
+}
+
+.salmon {
+  background-color: rgba(235, 40, 64, 0.75);
+
+}
+
+.lila {
+  background-color: rgba(189, 16, 224, 0.75);
+
+}
+
+.orange {
+  background-color: rgba(245, 165, 35, 0.75);
+
+}
+
+.bubblegum {
+  background-color: rgba(255, 182, 255, 0.75);
+
+}

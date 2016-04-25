@@ -31,7 +31,7 @@ You'll be provided with basic HTML and CSS as well as a JavaScript file containi
     - Returns the randomly selected quote object
 4.  Create a function named `printQuote()` which follows these rules:
     - `printQuote()` calls the `getRandomQuote()` function and stores the returned quote object in a variable
-    - `printQuote()` constructs a string using the different properties of the quote object using the following HTML            template:
+    - `printQuote()` constructs a string using the different properties of the quote object using the following HTML template:
 
       ```
       <p class="quote"> Quote goes here </p>
@@ -43,7 +43,7 @@ You'll be provided with basic HTML and CSS as well as a JavaScript file containi
 
       ```
     - `printQuote()` doesn't add a `<span class="citation">` for a missing citation or a `<span class="year">` if the year property is missing
-      - `printQuote()` displays the final HTML string to the page. You can use the following JS snippet to accomplish that `document.getElementById('quote-box').innterHTML;`
+    - `printQuote()` displays the final HTML string to the page. You can use the following JS snippet to accomplish that `document.getElementById('quote-box').innerHTML;`
 5.  Add code comments to document how your functions work
 6.  Use JSHint to analyze your JavaScript and identify any errors or code-style problems
 7.  Make sure your program is free of syntax errors. You can monitor any errors by looking at the Developer Tools console in your browser.
@@ -72,7 +72,7 @@ _Array of Objects_
 _More than 5 quotes_
 
 #### Quote Object
-_Objects in array include additional, relevant properties beyond the ones requires, such as categorization tags_
+_Objects in array include additional, relevant properties beyond the ones required, such as categorization tags_
 
 #### `getRandomQuote()`
 _`getRandomQuote()` does not return duplicate quote until all quotes have been returned once_
