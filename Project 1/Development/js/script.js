@@ -1,4 +1,4 @@
-/* Quote Object - - - - - - - - - */
+/*  Quote Object - - - - - - - - - */
 function Quote(author, ids, quote, imagePath, imageSource, imageUrl) {
   this.author = author;
   this.ids = ids;
@@ -9,8 +9,8 @@ function Quote(author, ids, quote, imagePath, imageSource, imageUrl) {
 
 }
 
-/* Quote Instances - - - - - - - - - */
-// Friedrich Nietzche
+/*  Quote Instances - - - - - - - - - */
+//  Friedrich Nietzche
 var quote1 = new Quote(
   "Friedrich Nietzche",
   "Philosopher, Critic, Poet",
@@ -21,7 +21,7 @@ var quote1 = new Quote(
 
 );
 
-// Mark Twain
+//  Mark Twain
 var quote2 = new Quote(
   "Mark Twain",
   "Author, Humorist",
@@ -32,7 +32,7 @@ var quote2 = new Quote(
 
 );
 
-// Carl Jung
+//  Carl Jung
 var quote3 = new Quote(
   "Carl Jung",
   "Psychiatrist, Psychotherapist",
@@ -43,7 +43,7 @@ var quote3 = new Quote(
 
 );
 
-// Fyodor Dostoyevsky
+//  Fyodor Dostoyevsky
 var quote4 = new Quote(
   "Fyodor Dostoyevsky",
   "Author, Philosopher",
@@ -54,7 +54,7 @@ var quote4 = new Quote(
 
 );
 
-// Albert Einstein
+//  Albert Einstein
 var quote5 = new Quote(
   "Albert Einstein",
   "Theoretical Physicist",
@@ -64,7 +64,7 @@ var quote5 = new Quote(
   "http://www.philosophicallibrary.com/wp-content/uploads/2016/03/Albert-Einstein-HD.jpg"
 
 );
-// Salvador Dalí
+//  Salvador Dalí
 var quote6 = new Quote(
   "Salvador Dalí",
   "Painter",
@@ -75,7 +75,7 @@ var quote6 = new Quote(
 
 );
 
-// Mahatma Gandhi
+//  Mahatma Gandhi
 var quote7 = new Quote(
   "Mahatma Gandhi",
   "Lawyer, Thinker, Politician",
@@ -86,7 +86,7 @@ var quote7 = new Quote(
 
 );
 
-// Martin Luther King Jr.
+//  Martin Luther King Jr.
 var quote8 = new Quote(
   "Martin Luther King Jr.",
   "Minister, Activist, Humanitarian, Leader",
@@ -97,7 +97,7 @@ var quote8 = new Quote(
 
 );
 
-// Nikola Tesla
+//  Nikola Tesla
 var quote9 = new Quote(
   "Nikola Tesla",
   "Inventor, Engineer, Physicist, Futurist",
@@ -108,7 +108,7 @@ var quote9 = new Quote(
 
 );
 
-// Ernest Hemingway
+//  Ernest Hemingway
 var quote10 = new Quote(
 
   "Ernest Hemingway",
@@ -120,26 +120,34 @@ var quote10 = new Quote(
 
 );
 
-/* Quote Object Array - - - - - - - - - */
+/*  Quote Object Array - - - - - - - - - */
 var quotes = [quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10];
 var quotesClone = [];
+var currentQuote = [];
 
 // /* Color Object Array - - - - - - - - - */
 // var colors = ["gray", "turquoise", "blue", "green", "purple", "yellow", "salmon", "lila", "orange", "bubblegum"];
 // var colorsClone = [];
 
-/* Random Index Global Variables */
+/*  Random Quote Global Variables */
 var numberOfQuotes = quotes.length;
 var randomIndex = (Math.floor(Math.random() * numberOfQuotes));
 var testProfiles = [];
 
-/* Testing Function - - - - - - - - - - */
+/*  Test Function - - - - - - - - - - */
+/*  This function runs everytime getRandomQuote() fetches a quote from the quotes array.
+    This function stores the selected random quote into an array and, after all the quotes
+    have been selected, prints out the author names of the selected quotes.
+    I did this to make ensure quotes were not being repeated.
+*/
+
 function test(profile) {
   testProfiles.push(profile);
 
   if (testProfiles.length === 10) {
     var printList = "You have viewed the following profiles: ";
     console.log("Test Array has " + testProfiles.length + " profiles.");
+
     for (var index = 0; index < testProfiles.length; index++) {
       printList += (index + 1) + ". " + testProfiles[index].author + "; ";
 
@@ -161,13 +169,24 @@ function test(profile) {
 
 }
 
-/* Random Quote Function - - - - - - - - - - */
+/*  Random Quote Function - - - - - - - - - - */
 function getRandomQuote() {
 
   if (numberOfQuotes > 0) {
     randomIndex = (Math.floor(Math.random() * numberOfQuotes));
     var randomQuote = quotes[randomIndex];
     quotesClone.push(randomQuote);
+
+    if (currentQuote.length === 0) {
+      currentQuote.push(randomQuote);
+
+    } else {
+      currentQuote = [];
+      currentQuote.push(randomQuote);
+
+    }
+
+    console.log(currentQuote[0].author);
     test(quotes[randomIndex]);
     return quotes[randomIndex];
 
@@ -202,40 +221,64 @@ function getRandomQuote() {
 //
 // }
 
-/* Print Quote Function - - - - - - - - - */
+/*  Fade-out Function - - - - - - - - - */
+function fadeOut() {
+  var image = document.getElementById('image-animation');
+  var copy = document.getElementById('copy-animation');
+  image.removeAttribute('image-fade-in');
+  image.className += ' image-fade-out';
+  copy.removeAttribute('copy-fade-in');
+  copy.className += ' copy-fade-out';
+
+}
+
+/*  Print Quote Function - - - - - - - - - */
 function printQuote() {
-  // Create a Profile for Random Quote Object
+  //  Create a Profile for Random Quote Object
   var profile = getRandomQuote();
 
-  // Create a Color for Random Color
-  // var color = getRandomColor();
+  //  Create a Color for Random Color
+  //  var color = getRandomColor();
 
-  // Capture Profile's Portrait and Source Data
+  //  Capture Profile's Portrait and Source Data
   var image = "";
   image += "<div class=\"overlay default-gray\"></div>";
   // image += "<div class=\"overlay " + color + "\"></div>";
   image += "<img id=\"portrait\" class=\"portrait\" src=\"" + profile.imagePath + "\">";
   image += "<p class=\"citation\"> Photo from ";
   image += "<a class=\"source\" target=\"_blank\" href=\"" + profile.imageUrl + "\"> " + profile.imageSource + "</a></p>";
-  // Insert Image and Citation into HTML
-  document.getElementById('image').innerHTML = image;
+  //  Insert Image and Citation into HTML
+  var imageHTML = document.getElementById('image');
+  imageHTML.innerHTML = image;
 
-  // Capture Profile's Content
+  //  Capture Profile's Copy
   var copy = "";
   copy += "<p class=\"author\">" + profile.author + "</p>";
   copy += "<p class=\"ids\">" + profile.ids + "</p>";
   copy += "<div class=\"separator\"></div>";
   copy += "<p class=\"quote\">" + profile.quote + "</p>";
-  // Insert Copy into HTML
-  document.getElementById('copy').innerHTML = copy;
+  //  Insert Copy into HTML
+  var copyHTML = document.getElementById('copy');
+  copyHTML.innerHTML = copy;
 
-  /* Remove Color from Master Array */
-  // colors.splice(randomIndex, 1);
+  /*  Remove Color from Master Array */
+  //  colors.splice(randomIndex, 1);
   quotes.splice(randomIndex, 1);
   numberOfQuotes = quotes.length;
 
 }
 
-/* Next Button - - - - - - - - - */
+/*  Next Button - - - - - - - - - */
 var next = document.getElementById('button');
-next.addEventListener('click', printQuote);
+next.addEventListener('click', function() {
+
+  fadeOut();
+  setTimeout(printQuote, 750);
+
+});
+
+/* On Page Load - - - - - - - - - */
+window.addEventListener("DOMContentLoaded", function() {
+  setTimeout(printQuote, 750);
+
+});

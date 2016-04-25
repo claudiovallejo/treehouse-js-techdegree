@@ -134,6 +134,28 @@
 
 }
 
+/* Fade-in Button Animation */
+@-webkit-keyframes fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+
+}
+@-moz-keyframes fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+
+}
+@-o-keyframes fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+
+}
+@keyframes fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+
+}
+
 .next {
   /* Structure */
   display: inline-block;
@@ -144,6 +166,11 @@
 	-moz-transition: color 0.35s ease-out;
 	-ms-transition: color 0.35s ease-out;
 	transition: color 0.35s ease-out;
+	/* Animations */
+	-webkit-animation: fade-in 1s ease-in-out 1.5s both;
+	-moz-animation: fade-in 1s ease-in-out 1.5s both;
+	-ms-animation: fade-in 1s ease-in-out 1.5s both;
+	animation: fade-in 1s ease-in-out 1.5s both;
 
 }
 
@@ -166,6 +193,69 @@
 }
 
 /* Portrait and Copyright - - - - - - - - - */
+/* Image Fade-in Animation */
+@-webkit-keyframes image-fade-in {
+	0% { opacity: 0; transform: translateX(-5px); }
+	100% { opacity: 1; transform: translateX(0px); }
+
+}
+@-moz-keyframes image-fade-in {
+	0% { opacity: 0; transform: translateX(-5px); }
+	100% { opacity: 1; transform: translateX(0px); }
+
+}
+@-o-keyframes image-fade-in {
+	0% { opacity: 0; transform: translateX(-5px); }
+	100% { opacity: 1; transform: translateX(0px); }
+
+}
+@keyframes image-fade-in {
+	0% { opacity: 0; transform: translateX(-5px); }
+	100% { opacity: 1; transform: translateX(0px); }
+
+}
+
+/* Image Fade-out Animation */
+@-webkit-keyframes image-fade-out {
+	0% { opacity: 0; transform: translateX(0px); }
+	100% { opacity: 1; transform: translateX(-5px); }
+
+}
+@-moz-keyframes image-fade-out {
+	0% { opacity: 0; transform: translateX(0px); }
+	100% { opacity: 1; transform: translateX(-5px); }
+
+}
+@-o-keyframes image-fade-out {
+	0% { opacity: 0; transform: translateX(0px); }
+	100% { opacity: 1; transform: translateX(-5px); }
+
+}
+@keyframes image-fade-out {
+	0% { opacity: 0; transform: translateX(0px); }
+	100% { opacity: 1; transform: translateX(-5px); }
+
+}
+
+.image-fade-in {
+	/* Animations */
+	-webkit-animation: image-fade-in 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	-moz-animation: image-fade-in 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	-ms-animation: image-fade-in 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	animation: image-fade-in 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+
+}
+
+.image-fade-out {
+	/* Animations */
+	-webkit-animation: image-fade-out 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	-moz-animation: image-fade-out 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	-ms-animation: image-fade-out 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	animation: image-fade-out 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+
+
+}
+
 .absolute {
   /* Structure */
   position: absolute;
@@ -221,6 +311,68 @@
 }
 
 /* Copy - - - - - - - - -  */
+/* Animation */
+@-webkit-keyframes copy-fade-in {
+	0% { opacity: 0; transform: translateX(5px); }
+	100% { opacity: 1; transform: translateX(0px); }
+
+}
+@-moz-keyframes copy-fade-in {
+	0% { opacity: 0; transform: translateX(5px); }
+	100% { opacity: 1; transform: translateX(0px); }
+
+}
+@-o-keyframes copy-fade-in {
+	0% { opacity: 0; transform: translateX(5px); }
+	100% { opacity: 1; transform: translateX(0px); }
+
+}
+@keyframes copy-fade-in {
+	0% { opacity: 0; transform: translateX(5px); }
+	100% { opacity: 1; transform: translateX(0px); }
+
+}
+
+@-webkit-keyframes copy-fade-out {
+	0% { opacity: 0; transform: translateX(0px); }
+	100% { opacity: 1; transform: translateX(5px); }
+
+}
+@-moz-keyframes copy-fade-out {
+	0% { opacity: 0; transform: translateX(0px); }
+	100% { opacity: 1; transform: translateX(5px); }
+
+}
+@-o-keyframes copy-fade-out {
+	0% { opacity: 0; transform: translateX(0px); }
+	100% { opacity: 1; transform: translateX(5px); }
+
+}
+@keyframes copy-fade-out {
+	0% { opacity: 0; transform: translateX(0px); }
+	100% { opacity: 1; transform: translateX(5px); }
+
+}
+
+.copy-fade-in {
+	/* Animations */
+	-webkit-animation: copy-fade-in 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	-moz-animation: copy-fade-in 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	-ms-animation: copy-fade-in 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	animation: copy-fade-in 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+
+}
+
+.copy-fade-out {
+	/* Animations */
+	-webkit-animation: copy-fade-out 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	-moz-animation: copy-fade-out 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	-ms-animation: copy-fade-out 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+	animation: copy-fade-out 0.75s cubic-bezier(0.45, 0.25, 0.25, 1) both;
+
+
+}
+
 .relative {
   /* Structure */
   position: relative;

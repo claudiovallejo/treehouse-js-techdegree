@@ -24,7 +24,7 @@ quoteB = [a2, i2, l2, q2, image2, c2]
 
 # Animation Variables
 animationCurve = "bezier-curve(0.45, 0.25, 0.25, 1)"
-animationTime = 0.50
+animationTime = 0.75
 delta = 5
 
 # Button States
@@ -138,6 +138,7 @@ for layer in captions
 
 	layer.states.switchInstant('hidden')
 	
+# On Page Load, do the following animations
 Utils.delay 0.75, ->
 	for layer in quoteA
 		layer.states.switch('visible')
