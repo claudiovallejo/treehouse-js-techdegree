@@ -1,7 +1,6 @@
 # Full Stack JavaScript Techdegree by Treehouse
 
 ## Degree Start Date: _Wednesday, April 20th, 2016_
-
 In this repository I'll be sharing my notes and projects for Treehouse's Full Stack JavaScript TechDegree. Below you'll find a short breakdown of the Program. If you're interested in learning more about the Techdegree, head over to their [site] (https://teamtreehouse.com "site").
 
 The Treehouse Techdegree
