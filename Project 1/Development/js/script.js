@@ -148,7 +148,6 @@ var quote10 = new Quote(
 var quotes = [quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10];
 //  Array that contains the quotes that have been randomly selected by the getRandomQuote()
 var quotesClone = [];
-var currentQuote = [];
 
 /*  Random Quote Global Variables */
 var numberOfQuotes = quotes.length;
@@ -205,16 +204,6 @@ function getRandomQuote() {
     randomIndex = (Math.floor(Math.random() * numberOfQuotes));
     var randomQuote = quotes[randomIndex];
     quotesClone.push(randomQuote);
-
-    // if (currentQuote.length === 0) {
-    //   currentQuote.push(randomQuote);
-    //
-    // } else {
-    //   currentQuote = [];
-    //   currentQuote.push(randomQuote);
-    //
-    // }
-
     test(quotes[randomIndex]);
     return quotes[randomIndex];
 
