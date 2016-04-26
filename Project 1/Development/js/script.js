@@ -125,10 +125,6 @@ var quotes = [quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, qu
 var quotesClone = [];
 var currentQuote = [];
 
-// /* Color Object Array - - - - - - - - - */
-// var colors = ["gray", "turquoise", "blue", "green", "purple", "yellow", "salmon", "lila", "orange", "bubblegum"];
-// var colorsClone = [];
-
 /*  Random Quote Global Variables */
 var numberOfQuotes = quotes.length;
 var randomIndex = (Math.floor(Math.random() * numberOfQuotes));
@@ -202,24 +198,6 @@ function getRandomQuote() {
   }
 
 }
-
-// /* Random Color Function - - - - - - - - - */
-// function getRandomColor() {
-//   if (numberOfQuotes > 0) {
-//     var randomColor = colors[randomIndex];
-//     colorsClone.push(randomColor);
-//     return randomColor;
-//
-//   }
-//
-//   if (numberOfQuotes === 0) {
-//     colors = colorsClone;
-//     colorsClone = [];
-//     return colors[randomIndex];
-//
-//   }
-//
-// }
 
 /*  Fade-out Function - - - - - - - - - */
 function fadeOut() {
