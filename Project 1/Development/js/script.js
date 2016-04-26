@@ -207,6 +207,9 @@ function getRandomQuote() {
     test(quotes[randomIndex]);
     return quotes[randomIndex];
 
+  //  If the Quotes Array is empty, we can't index it with the randomIndex variable.
+  //  Therefore, we copy the contents of the Clone Quotes Array into the Quotes Array, clear out the Clone Quotes Array
+  //  AND THEN index the Quotes Array.
   } else {
     quotes = quotesClone;
     quotesClone = [];
@@ -220,25 +223,26 @@ function getRandomQuote() {
 
 /*  Fade-out Function - - - - - - - - - */
 function fadeOut() {
-  //  Removes Fade-in Class, adds Fade-out Class
+  //  Removes Fade-in Class, adds Fade-out Class to the #image-animation div
   var image = document.getElementById('image-animation');
-  // image.classList.remove('image-fade-in');
+  image.classList.remove('image-fade-in');
   image.classList.add('image-fade-out');
 
+  //  Removes Fade-in Class, adds Fade-out Class to the #copy-animation div
   var copy = document.getElementById('copy-animation');
-  // copy.classList.remove('copy-fade-in');
+  copy.classList.remove('copy-fade-in');
   copy.classList.add('copy-fade-out');
 
 }
 
 /*  Fade-in Function - - - - - - - - - */
 function fadeIn() {
-  //  Removes Fade-out Class, adds Fade-in Class
+  //  Removes Fade-out Class, adds Fade-in Class to the #image-animation div
   var image = document.getElementById('image-animation');
   image.classList.remove('image-fade-out');
   image.classList.add('image-fade-in');
 
-
+  //  Removes Fade-out Class, adds Fade-in Class to the #copy-animation div
   var copy = document.getElementById('copy-animation');
   copy.classList.remove('copy-fade-out');
   copy.classList.add('copy-fade-in');
@@ -268,6 +272,8 @@ function printQuote() {
   var imageHTML = document.getElementById('image');
   var copyHTML = document.getElementById('copy');
   fadeOut();
+  //  Delay the fadeIn of each Animating Div to let the fadeOut animation to finish. Also as soon as the fadeOut has finished,
+  //  update the divs content with the new randomly selected Quote.
   setTimeout(function() {
       fadeIn();
       imageHTML.innerHTML = image;
@@ -275,15 +281,14 @@ function printQuote() {
 
   }, 800);
 
-  /*  Remove Color from Master Array */
-  //  colors.splice(randomIndex, 1);
   quotes.splice(randomIndex, 1);
   numberOfQuotes = quotes.length;
 
 }
 
-/* 9 Second Timer - - - - - - - - - - */
-// This timer prints a new quote every 9 seconds. The timer resets when the user clicks the "Next" button.
+/*  9 Second Timer - - - - - - - - - - */
+//  This timer prints a new quote every 9 seconds. The timer resets when the user clicks the "Next" button. I chose
+//  9 seconds because I think its a good amount of time to read the quote and enjoy the image.
 var timer = setInterval(printQuote, 9000);
 
 /*  Next Button - - - - - - - - - */
