@@ -217,23 +217,23 @@
 
 /* Image Fade-out Animation */
 @-webkit-keyframes image-fade-out {
-	0% { opacity: 0; transform: translateX(0px); }
-	100% { opacity: 1; transform: translateX(-5px); }
+	0% { opacity: 1; transform: translateX(0px); }
+	100% { opacity: 0; transform: translateX(-5px); }
 
 }
 @-moz-keyframes image-fade-out {
-	0% { opacity: 0; transform: translateX(0px); }
-	100% { opacity: 1; transform: translateX(-5px); }
+	0% { opacity: 1; transform: translateX(0px); }
+	100% { opacity: 0; transform: translateX(-5px); }
 
 }
 @-o-keyframes image-fade-out {
-	0% { opacity: 0; transform: translateX(0px); }
-	100% { opacity: 1; transform: translateX(-5px); }
+	0% { opacity: 1; transform: translateX(0px); }
+	100% { opacity: 0; transform: translateX(-5px); }
 
 }
 @keyframes image-fade-out {
-	0% { opacity: 0; transform: translateX(0px); }
-	100% { opacity: 1; transform: translateX(-5px); }
+	0% { opacity: 1; transform: translateX(0px); }
+	100% { opacity: 0; transform: translateX(-5px); }
 
 }
 
@@ -334,23 +334,23 @@
 }
 
 @-webkit-keyframes copy-fade-out {
-	0% { opacity: 0; transform: translateX(0px); }
-	100% { opacity: 1; transform: translateX(5px); }
+	0% { opacity: 1; transform: translateX(0px); }
+	100% { opacity: 0; transform: translateX(5px); }
 
 }
 @-moz-keyframes copy-fade-out {
-	0% { opacity: 0; transform: translateX(0px); }
-	100% { opacity: 1; transform: translateX(5px); }
+	0% { opacity: 1; transform: translateX(0px); }
+	100% { opacity: 0; transform: translateX(5px); }
 
 }
 @-o-keyframes copy-fade-out {
-	0% { opacity: 0; transform: translateX(0px); }
-	100% { opacity: 1; transform: translateX(5px); }
+	0% { opacity: 1; transform: translateX(0px); }
+	100% { opacity: 0; transform: translateX(5px); }
 
 }
 @keyframes copy-fade-out {
-	0% { opacity: 0; transform: translateX(0px); }
-	100% { opacity: 1; transform: translateX(5px); }
+	0% { opacity: 1; transform: translateX(0px); }
+	100% { opacity: 0; transform: translateX(5px); }
 
 }
 

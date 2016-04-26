@@ -201,12 +201,28 @@ function getRandomQuote() {
 
 /*  Fade-out Function - - - - - - - - - */
 function fadeOut() {
+  //  Removes Fade-in Class, adds Fade-out Class
   var image = document.getElementById('image-animation');
+  // image.classList.remove('image-fade-in');
+  image.classList.add('image-fade-out');
+
   var copy = document.getElementById('copy-animation');
-  image.removeAttribute('image-fade-in');
-  image.className += ' image-fade-out';
-  copy.removeAttribute('copy-fade-in');
-  copy.className += ' copy-fade-out';
+  // copy.classList.remove('copy-fade-in');
+  copy.classList.add('copy-fade-out');
+
+}
+
+/*  Fade-in Function - - - - - - - - - */
+function fadeIn() {
+  //  Removes Fade-out Class, adds Fade-in Class
+  var image = document.getElementById('image-animation');
+  image.classList.remove('image-fade-out');
+  image.classList.add('image-fade-in');
+
+
+  var copy = document.getElementById('copy-animation');
+  copy.classList.remove('copy-fade-out');
+  copy.classList.add('copy-fade-in');
 
 }
 
@@ -215,29 +231,30 @@ function printQuote() {
   //  Create a Profile for Random Quote Object
   var profile = getRandomQuote();
 
-  //  Create a Color for Random Color
-  //  var color = getRandomColor();
-
   //  Capture Profile's Portrait and Source Data
   var image = "";
   image += "<div class=\"overlay default-gray\"></div>";
-  // image += "<div class=\"overlay " + color + "\"></div>";
   image += "<img id=\"portrait\" class=\"portrait\" src=\"" + profile.imagePath + "\">";
   image += "<p class=\"citation\"> Photo from ";
   image += "<a class=\"source\" target=\"_blank\" href=\"" + profile.imageUrl + "\"> " + profile.imageSource + "</a></p>";
-  //  Insert Image and Citation into HTML
-  var imageHTML = document.getElementById('image');
-  imageHTML.innerHTML = image;
 
-  //  Capture Profile's Copy
+  //  Capture Profile's Quote Content
   var copy = "";
   copy += "<p class=\"author\">" + profile.author + "</p>";
   copy += "<p class=\"ids\">" + profile.ids + "</p>";
   copy += "<div class=\"separator\"></div>";
   copy += "<p class=\"quote\">" + profile.quote + "</p>";
-  //  Insert Copy into HTML
+
+  //  Insert new HTML Content
+  var imageHTML = document.getElementById('image');
   var copyHTML = document.getElementById('copy');
-  copyHTML.innerHTML = copy;
+  fadeOut();
+  setTimeout(function() {
+      fadeIn();
+      imageHTML.innerHTML = image;
+      copyHTML.innerHTML = copy;
+
+  }, 800);
 
   /*  Remove Color from Master Array */
   //  colors.splice(randomIndex, 1);
@@ -248,15 +265,7 @@ function printQuote() {
 
 /*  Next Button - - - - - - - - - */
 var next = document.getElementById('button');
-next.addEventListener('click', function() {
-
-  fadeOut();
-  setTimeout(printQuote, 750);
-
-});
+next.addEventListener('click', printQuote);
 
 /* On Page Load - - - - - - - - - */
-window.addEventListener("DOMContentLoaded", function() {
-  setTimeout(printQuote, 750);
-
-});
+window.addEventListener("DOMContentLoaded", printQuote);
