@@ -1,4 +1,4 @@
-/* Grid System - - - - - - - - - */
+/* HTML & Wrapper - - - - - - - - - */
 *, *:after, *:before {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -13,6 +13,7 @@
 
 }
 
+/* Grid System - - - - - - - - - */
 /* Container Rules */
 .container {
 	width: 100%;
@@ -311,7 +312,7 @@
 }
 
 /* Copy - - - - - - - - -  */
-/* Animation */
+/* Copy Fade-in Animation */
 @-webkit-keyframes copy-fade-in {
 	0% { opacity: 0; transform: translateX(5px); }
 	100% { opacity: 1; transform: translateX(0px); }
@@ -333,6 +334,7 @@
 
 }
 
+/* Copy Fade-in Animation */
 @-webkit-keyframes copy-fade-out {
 	0% { opacity: 1; transform: translateX(0px); }
 	100% { opacity: 0; transform: translateX(5px); }
@@ -410,6 +412,7 @@
   /* Structure */
   width: 30px;
   margin-bottom: 50px;
+	/* Style */
   border-bottom: 2px solid #232323;
 
 }
@@ -422,69 +425,5 @@
   font-size: 30px;
   line-height: 48px;
   color: #232323;
-
-}
-
-/* Spacer - - - - - - - - - */
-/*.spacer {
-  padding: 50px 0;
-
-}*/
-
-/* Default Copy State */
-
-
-/* Color Overlays - - - - - - - - - */
-.default-gray {
-  background-color: rgba(195, 195, 195, 0.75);
-}
-
-.gray {
-  background-color: rgba(215, 215, 215, 0.75);
-
-}
-
-.turquoise {
-  background-color: rgba(80, 227, 194, 0.75);
-
-}
-
-.blue {
-  background-color: rgba(0, 128, 250, 0.75);
-
-}
-
-.green {
-  background-color: rgba(37, 211, 33, 0.75);
-
-}
-
-.purple {
-  background-color: rgba(114, 68, 254, 0.75);
-
-}
-
-.yellow {
-  background-color: rgba(248, 231, 38, 0.75);
-
-}
-
-.salmon {
-  background-color: rgba(235, 40, 64, 0.75);
-
-}
-
-.lila {
-  background-color: rgba(189, 16, 224, 0.75);
-
-}
-
-.orange {
-  background-color: rgba(245, 165, 35, 0.75);
-
-}
-
-.bubblegum {
-  background-color: rgba(255, 182, 255, 0.75);
 
 }

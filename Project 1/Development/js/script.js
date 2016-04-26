@@ -182,7 +182,6 @@ function getRandomQuote() {
 
     }
 
-    console.log(currentQuote[0].author);
     test(quotes[randomIndex]);
     return quotes[randomIndex];
 
@@ -263,9 +262,23 @@ function printQuote() {
 
 }
 
+/* 9 Second Timer - - - - - - - - - - */
+// This timer prints a new quote every 9 seconds. The timer resets when the user clicks the "Next" button.
+var timer = setInterval(printQuote, 9000);
+
 /*  Next Button - - - - - - - - - */
 var next = document.getElementById('button');
-next.addEventListener('click', printQuote);
+next.addEventListener('click', function() {
+  printQuote();
+  clearInterval(timer);
+  timer = setInterval(printQuote, 9000);
+
+});
 
 /* On Page Load - - - - - - - - - */
-window.addEventListener("DOMContentLoaded", printQuote);
+window.addEventListener("DOMContentLoaded", function(){
+  printQuote();
+  clearInterval(timer);
+  timer = setInterval(printQuote, 9000);
+
+});
