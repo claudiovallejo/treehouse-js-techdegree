@@ -154,12 +154,19 @@ var quotesClone = [];
  */
 function getRandomQuote() {
 
+  //  Copies the Clone Quotes Array when the Quotes Array is empty and
+  //  empties the Clone Quotes Array
   if (quotes.length === 0) {
     quotes = quotesClone;
     quotesClone = [];
 
   }
 
+  //  Gets a random number between 0 and the Quotes Array's length,
+  //  Captures a child of the Quotes Array at the randomIndex,
+  //  Pushes the selected Quote to the Clones Array,
+  //  Removes the Selected Quote from the Quotes Array
+  //  Returns the Selected Quote
   randomIndex = (Math.floor(Math.random() * quotes.length));
   var randomQuote = quotes[randomIndex];
   quotesClone.push(randomQuote);
