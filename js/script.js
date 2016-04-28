@@ -147,8 +147,6 @@ var quote10 = {
 var quotes = [quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10];
 //  Array that contains the quotes that have been randomly selected by the getRandomQuote()
 var quotesClone = [];
-//  Variable that stores a value between 0 and the length of the Quotes Array
-var randomIndex = (Math.floor(Math.random() * quotes.length));
 
 /*  Random Quote Function - - - - - - - - - - */
 /*  The Function responsible for selecting a random Quote from the quotes array
@@ -156,24 +154,16 @@ var randomIndex = (Math.floor(Math.random() * quotes.length));
  */
 function getRandomQuote() {
 
-  if (quotes.length > 0) {
-    randomIndex = (Math.floor(Math.random() * quotes.length));
-    var randomQuote = quotes[randomIndex];
-    quotesClone.push(randomQuote);
-    quotes.splice(randomIndex, 1);
-    // test(quotes[randomIndex]);
-
-  //  If the Quotes Array is empty, we can't index it with the randomIndex variable.
-  //  Therefore, we copy the contents of the Clone Quotes Array into the Quotes Array, clear out the Clone Quotes Array
-  //  AND THEN index the Quotes Array.
-} else {
+  if (quotes.length === 0) {
     quotes = quotesClone;
     quotesClone = [];
-    randomIndex = (Math.floor(Math.random() * quotes.length));
-    var randomQuote = quotes[randomIndex];
 
   }
 
+  randomIndex = (Math.floor(Math.random() * quotes.length));
+  var randomQuote = quotes[randomIndex];
+  quotesClone.push(randomQuote);
+  quotes.splice(randomIndex, 1);
   return randomQuote;
 
 }
